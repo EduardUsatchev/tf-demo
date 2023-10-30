@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 module "web" {
-  source = "../modules/moshe"
+  source = "../../modules/moshe"
   instance_type = "m5.2xlarge"
   ami_id = "ami-blabla"
 }
