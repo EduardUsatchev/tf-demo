@@ -5,5 +5,5 @@ provider "kubernetes" {
 
 module "app" {
   source = "../../modules/app"
-  env = "dev"
+  env = "prod"
 }

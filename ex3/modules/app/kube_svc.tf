@@ -1,4 +1,5 @@
 resource "kubernetes_service" "app" {
+  depends_on = [kubernetes_namespace.ns]
   metadata {
     name = "app"
     namespace = var.env
