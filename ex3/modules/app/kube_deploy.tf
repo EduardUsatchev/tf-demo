@@ -24,7 +24,7 @@ resource "kubernetes_deployment" "app" {
       spec {
 
         container {
-          image = "nginx:1.7.8"
+          image = var.image
           name  = "app"
         }
       }

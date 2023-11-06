@@ -5,5 +5,6 @@ provider "kubernetes" {
 
 module "app" {
   source = "../../modules/app"
+  image = "nginx:alpine"
   env = "dev"
 }
