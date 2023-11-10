@@ -4,8 +4,8 @@ provider "aws" {
 
 module "web" {
   source = "../../modules/moshe"
-  count = var.moshe == "haim" ? 1 : 0
-  instance_type = "t2.micro"
+  count = var.moshe == "haim" ? 5 : 0
+  moshe_instance_type = "t2.micro"
 }
 variable "create_module" {
   default = 1
