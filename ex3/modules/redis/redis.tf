@@ -1,8 +1,9 @@
 resource "helm_release" "example" {
   name       = var.release_name
   namespace = var.env
+  create_namespace = var.create_namespace
   repository = var.registry
-  chart      = "redis"
+  chart      = var.chart
 
   set {
     name  = "metrics.enabled"
@@ -10,6 +11,10 @@ resource "helm_release" "example" {
   }
 }
 
+variable "create_namespace" {default = true}
+variable "chart" {
+  default = "redis"
+}
 variable "registry" {
   default = "oci://registry-1.docker.io/bitnamicharts"
 }

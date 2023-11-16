@@ -6,5 +6,8 @@ provider "helm" {
 
 module "redis" {
   source = "../../modules/redis"
-  env = "dev"
+  env = var.env
+
 }
+
+variable "env" {default = "dev"}
